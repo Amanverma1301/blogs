@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include('./partials/head') %>
+    <title>Sign In</title>
+    <style>
+        body {
+              font-family: "Play", sans-serif;
+            background:url('/freefire.jpg');
+           background-size: cover;
+           min-height: 100vh;
+        }
+        .signin-card {
+            margin-top: 80px;
+            padding: 0;
+             background: url("/bunny.jpg");
+            background-size: cover;
+            border-radius: 12px;
+            overflow: hidden;
+            position: relative;
+            box-shadow: 0 6px 30px rgba(0, 0, 0, 0.3);
+            color: #fff;
+        }
+        .video-wrapper {
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 50%;
+            width: 50%;
+            z-index: 1;
+        }
+         .btn-yellow {
+  background-color: #ffcc00;
+  color: black;
+  font-weight: 600;
+  border: none;
+  padding: 10px 0;
+  border-radius: 10px;
+  transition: background-color 0.3s ease;
+}
+
+
+
+.btn-yellow:hover {
+  background-color: #e6b800;
+}
+
+        .form-overlay {
+            position: relative;
+            z-index: 2;
+            padding: 30px;
+        }
+    </style>
+
+</head>
+<body>
+    <%- include('./partials/nav') %>
+    <div class="container d-flex justify-content-center">
+        <div class="signin-card col-md-5">  
+           
+     <div class="form-overlay">
+            <h2 class="mb-4 text-center">Sign In</h2>
+            <form action="/user/signin" method="POST">
+                <div class="mb-3">
+                    <label for="exampleInputEmail" class="form-label">Email address</label>
+                    <input type="email" class="form-control" name="email" id="exampleInputEmail" aria-describedby="emailHelp" placeholder="Enter your email" required>
+   <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+                </div>
+                <div class="mb-3">
+                    <label for="exampleInputPassword1" class="form-label">Password</label>
+                    <input type="password" class="form-control" name="password" id="exampleInputPassword1" placeholder="Enter your password" required>
+                </div>
+           <button type="submit" class="btn btn-yellow w-100">Sign In</button>  
+            </form>
+            </div>
+        </div>
+    </div>
+    <%- include('./partials/script') %>
+</body>
+</html>

@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <%- include('./partials/head') %>
+  <title>Add Free Fire Profile</title>
+
+  <!-- Orbitron Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&display=swap" rel="stylesheet">
+
+  <!-- Font Awesome for icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <style>
+    body {
+      background-color: #0a0a0a;
+      color: #fff;
+      font-family: 'Orbitron', sans-serif;
+      margin: 0;
+      padding: 0;
+      background:url('/freefire.jpg');
+           background-size: cover;
+           min-height: 100vh;
+    }
+
+    .container {
+      max-width: 800px;
+      margin: 40px auto;
+      background-color: #1b1b1b;
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 0 20px #ffc107;
+    }
+
+    h2 {
+      text-align: center;
+      color: #ffc107;
+      margin-bottom: 30px;
+      text-shadow: 0 0 10px #ff9900;
+    }
+
+    label {
+      font-weight: 600;
+      color: #ffcc00;
+    }
+
+    .form-control {
+      background-color: #2e2e2e;
+      color: white;
+      border: 1px solid #ffc107;
+      border-radius: 6px;
+      margin-bottom: 15px;
+    }
+
+    .form-control::placeholder {
+      color: #ccc;
+    }
+
+    .btn-primary {
+      background-color: #ff6a00;
+      border: none;
+      padding: 12px 25px;
+      font-weight: bold;
+      font-size: 16px;
+      border-radius: 8px;
+      transition: 0.3s;
+      box-shadow: 0 0 10px #ff6a00;
+    }
+
+    .btn-primary:hover {
+      background-color: #ff851a;
+      box-shadow: 0 0 20px #ff6a00;
+    }
+
+    .form-label i {
+      margin-right: 8px;
+      color: #ffaa00;
+    }
+
+    .banner {
+      width: 100%;
+      border-radius: 12px;
+      margin-bottom: 20px;
+      box-shadow: 0 0 20px #ffcc00;
+    }
+
+    textarea {
+      resize: vertical;
+    }
+
+    @media screen and (max-width: 768px) {
+      .container {
+        margin: 20px;
+        padding: 20px;
+      }
+
+      .btn-primary {
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+  <%- include('./partials/nav') %>
+
+  <div class="container ">
+
+    <h2>🔥 Submit Your Free Fire Profile 🔥</h2>
+
+    <form action="/blog" method="post" enctype="multipart/form-data">
+      <div class="mb-3">
+        <label for="coverimage" class="form-label"><i class="fa-solid fa-image"></i>Profile Image</label>
+        <input type="file" class="form-control" name="coverimage" id="coverimage">
+      </div>
+
+    
+      <div class="mb-3">
+        <label for="name"><i class="fa-solid fa-user"></i>Name</label>
+        <textarea class="form-control" placeholder="Enter your in-game name" name="name" id="name"></textarea>
+      </div>
+
+      <div class="mb-3">
+        <label for="title"><i class="fa-solid fa-shield-halved"></i>Role</label>
+        <input type="text" class="form-control" name="title" id="title" placeholder="e.g. Rusher, Sniper, IGL">
+      </div>
+
+      <div class="mb-3">
+        <label for="age"><i class="fa-solid fa-hourglass-half"></i>Age</label>
+        <textarea class="form-control" name="age" id="age" placeholder="Enter your age"></textarea>
+      </div>
+
+      <div class="mb-3">
+        <label for="region"><i class="fa-solid fa-location-dot"></i>Region</label>
+        <textarea class="form-control" name="region" id="region" placeholder="e.g. India, SEA, Brazil"></textarea>
+      </div>
+
+      <div class="mb-3">
+        <label for="kd"><i class="fa-solid fa-crosshairs"></i>KD (Kill/Death)</label>
+        <textarea class="form-control" name="kd" id="kd" placeholder="e.g. 4.2"></textarea>
+      </div>
+
+      <div class="mb-3">
+        <label for="hr"><i class="fa-solid fa-bullseye"></i>HR (Headshot Rate)</label>
+        <textarea class="form-control" name="hr" id="hr" placeholder="e.g. 60%"></textarea>
+      </div>
+
+      <div class="mb-3">
+        <label for="body"><i class="fa-solid fa-align-left"></i>Additional Details</label>
+        <textarea class="form-control" name="body" id="body" placeholder="Describe your gaming style, achievements, or squad info"></textarea>
+      </div>
+
+      <div class="text-center">
+        <button type="submit" class="btn btn-primary">🚀 Submit Profile</button>
+      </div>
+    </form>
+  </div>
+
+  <%- include('./partials/script') %>
+</body>
+</html>
