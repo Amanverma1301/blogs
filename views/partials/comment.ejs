@@ -105,8 +105,8 @@ background: transparent;
       <% comment.forEach(comment => { %>
         <div class="comment-box">
           <% if (comment.createdby) { %>
-            <img src="<%= comment.createdby.coverimageurl %>" width="50px" alt="">
-            <span class="comment-author"><%= comment.createdby.fullname %></span>
+            <img src="<%= comment.createdby.coverimageurl%>" width="50px" alt="">
+            <span class="comment-author"><%= comment.createdby.fullname%></span>
           <% } %>
           <pre><%= comment.content %></pre>
         </div>
